@@ -31,4 +31,5 @@ plot_ly(x=time(presidents), y=presidents, type="bar")
 70
 80
 90
+https://github.com/wuyue0915/R-Marketdown-project2/blob/main/Picture2.png
 #knitr::opts_chunk$set(echo = TRUE)
