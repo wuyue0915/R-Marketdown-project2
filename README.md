@@ -1,35 +1,11 @@
-# R-Marketdown-project2
-data("presidents")
+Code
 library(plotly)
-## Loading required package: ggplot2
-## 
-## Attaching package: 'plotly'
-## The following object is masked from 'package:ggplot2':
-## 
-##     last_plot
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## The following object is masked from 'package:graphics':
-## 
-##     layout
-#The presidents dataset is the (approximately) quarterly approval rating for the President of the United States from the first quarter of 1945 to the last quarter of 1974.
-plot_ly(x=time(presidents), y=presidents, type="bar")
-## Warning: Ignoring 6 observations
-1950
-1955
-1960
-1965
-1970
-0
-10
-20
-30
-40
-50
-60
-70
-80
-90
-https://github.com/wuyue0915/R-Marketdown-project2/blob/main/Picture2.png
-#knitr::opts_chunk$set(echo = TRUE)
+library(tidyr)
+library(dplyr)
+data("EuStockMarkets")
+stocks <- as.data.frame(EuStockMarkets) %>%
+  gather(index, price) %>%
+  mutate(time = rep(time(EuStockMarkets), 4))
+plot_ly(stocks, x = ~time, y = ~price, color = ~index, mode = "lines")
+Plot
+Error in file(con, "rb") : cannot open the connection
